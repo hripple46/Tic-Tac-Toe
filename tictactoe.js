@@ -1,4 +1,4 @@
-const x = ["O", "O", "O", "", "X", "X", "", "", ""];
+let gameArray = [];
 
 const Gameboard = (() => {
   const addChoice = (playerChoice) => {
@@ -6,18 +6,103 @@ const Gameboard = (() => {
     for (let i = 0; i < playerChoice.length; i++) {
       gameBoardArray.push(playerChoice[i].innerText);
     }
+    gameArray = gameBoardArray;
     console.log(gameBoardArray);
   };
   const checkWin = () => {
-    const grid = document.querySelectorAll(".box");
-    for (let j = 0; j < grid.length; j++) {
-      if (grid[j].innerText === x[j]) {
-        console.log("Woo-Hoo!");
-      } else {
-        return;
-      }
-    }
-    prompt("You Win!");
+    if (gameArray[0] == "O" && gameArray[1] == "O" && gameArray[2] == "O") {
+      prompt("O Wins!");
+    } else if (
+      gameArray[0] == "O" &&
+      gameArray[4] == "O" &&
+      gameArray[8] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[0] == "O" &&
+      gameArray[3] == "O" &&
+      gameArray[6] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[1] == "O" &&
+      gameArray[4] == "O" &&
+      gameArray[7] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[2] == "O" &&
+      gameArray[5] == "O" &&
+      gameArray[8] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[3] == "O" &&
+      gameArray[4] == "O" &&
+      gameArray[5] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[6] == "O" &&
+      gameArray[7] == "O" &&
+      gameArray[8] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[2] == "O" &&
+      gameArray[4] == "O" &&
+      gameArray[6] == "O"
+    ) {
+      prompt("O Wins!");
+    } else if (
+      gameArray[0] == "X" &&
+      gameArray[1] == "X" &&
+      gameArray[2] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[0] == "X" &&
+      gameArray[4] == "X" &&
+      gameArray[8] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[0] == "X" &&
+      gameArray[3] == "X" &&
+      gameArray[6] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[1] == "X" &&
+      gameArray[4] == "X" &&
+      gameArray[7] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[3] == "X" &&
+      gameArray[4] == "X" &&
+      gameArray[5] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[6] == "X" &&
+      gameArray[7] == "X" &&
+      gameArray[8] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[2] == "X" &&
+      gameArray[4] == "X" &&
+      gameArray[6] == "X"
+    ) {
+      prompt("X Wins!");
+    } else if (
+      gameArray[2] == "X" &&
+      gameArray[5] == "X" &&
+      gameArray[8] == "X"
+    ) {
+      prompt("X Wins!");
+    } else return;
   };
 
   return { addChoice, checkWin };
