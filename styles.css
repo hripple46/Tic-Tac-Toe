@@ -14,6 +14,10 @@ body {
   grid-template-rows: 1fr 1fr 1fr;
   border: 1px solid black;
 }
+.box {
+  font-size: large;
+  text-align: center;
+}
 
 #box1,
 #box2,
