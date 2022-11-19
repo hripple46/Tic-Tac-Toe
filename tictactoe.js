@@ -1,13 +1,20 @@
+let gameBoardArray = [];
+
 const Gameboard = (() => {
-  const gameBoard = [];
-  const grid = document.querySelectorAll(".box");
-  const displayGrid = () => {
-    for (let i = 0; i < grid.length; i++) {
-      grid[i].innerText = gameBoard[i];
+  const addChoice = (playerChoice) => {
+    gameBoardArray = [];
+    for (let i = 0; i < playerChoice.length; i++) {
+      gameBoardArray += playerChoice[i].innerText;
     }
+    console.log(gameBoardArray);
   };
-  return { displayGrid };
+
+  return { addChoice };
 })();
+document.querySelector("#container").addEventListener("click", () => {
+  Gameboard.addChoice(document.querySelectorAll(".box"));
+});
+
 //Gameboard.displayGrid();
 
 const displayController = (() => {

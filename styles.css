@@ -3,6 +3,9 @@ body {
   height: 100%;
   width: 100%;
 }
+body {
+  font-family: "Satisfy", cursive;
+}
 
 #container {
   height: 50%;
@@ -15,8 +18,10 @@ body {
   border: 1px solid black;
 }
 .box {
-  font-size: large;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
 }
 
 #box1,
