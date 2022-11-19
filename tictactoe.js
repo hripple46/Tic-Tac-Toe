@@ -1,18 +1,31 @@
-let gameBoardArray = [];
+const x = ["O", "O", "O", "", "X", "X", "", "", ""];
 
 const Gameboard = (() => {
   const addChoice = (playerChoice) => {
-    gameBoardArray = [];
+    let gameBoardArray = [];
     for (let i = 0; i < playerChoice.length; i++) {
-      gameBoardArray += playerChoice[i].innerText;
+      gameBoardArray.push(playerChoice[i].innerText);
     }
     console.log(gameBoardArray);
   };
+  const checkWin = () => {
+    const grid = document.querySelectorAll(".box");
+    for (let j = 0; j < grid.length; j++) {
+      if (grid[j].innerText === x[j]) {
+        console.log("Woo-Hoo!");
+      } else {
+        return;
+      }
+    }
+    prompt("You Win!");
+  };
 
-  return { addChoice };
+  return { addChoice, checkWin };
 })();
+
 document.querySelector("#container").addEventListener("click", () => {
   Gameboard.addChoice(document.querySelectorAll(".box"));
+  Gameboard.checkWin();
 });
 
 //Gameboard.displayGrid();
