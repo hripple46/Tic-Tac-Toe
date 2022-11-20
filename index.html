@@ -13,6 +13,24 @@
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
+    <form class="userInput">
+      <div>
+        <label for="player1">Player 1 (Name): </label>
+        <input type="text" class="playerName" name="player" id="player1" />
+      </div>
+      <button name="submit" id="submit">Submit</button>
+
+      <div>
+        <label for="player2">Player 2 (Name): </label>
+        <input type="text" class="playerName" name="player" id="player2" />
+      </div>
+    </form>
+    <div class="gridCont">
+      <div class="gamelog"></div>
+
+      <div class="button"><button class="resetBtn">Reset Game</button></div>
+    </div>
+
     <div id="container">
       <div class="box" id="box1"></div>
       <div class="box" id="box2"></div>
